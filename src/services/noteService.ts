@@ -10,19 +10,6 @@ const api = axios.create({
   },
 });
 
-// Перехоплювач помилок
-api.interceptors.response.use(
-  (response) => response,
-  (error) => {
-    if (error.response?.status === 403) {
-      console.error('❌ 403 Forbidden — перевірте токен у .env');
-      console.error('URL:', error.config?.url);
-      console.error('Headers:', error.config?.headers);
-    }
-    return Promise.reject(error);
-  }
-);
-
 export interface FetchNotesResponse {
   notes: Note[];
   totalPages: number;
