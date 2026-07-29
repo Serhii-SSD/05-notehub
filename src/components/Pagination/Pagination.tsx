@@ -26,8 +26,8 @@ export default function Pagination({ pageCount, onPageChange, forcePage }: Pagin
       nextClassName={css.next}
       disabledClassName={css.disabled}
       breakClassName={css.break}
-      previousLabel="<"
-      nextLabel=">"
+      nextLabel="→"
+          previousLabel="←"
     />
   );
 }
